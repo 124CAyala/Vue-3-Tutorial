@@ -6,7 +6,7 @@ const app = Vue.createApp({
             description: 'They are socks',
             image: './assets/images/socks_green.jpg',
             url: 'https://www.vuemastery.com/',
-            inventory: 100,
+            inventory: 10,
             onSale: true,
             details: ['50% Cotton', '30% Wool', '20% Polyester'],
             variants: [
@@ -22,6 +22,18 @@ const app = Vue.createApp({
         },
         updateImage(variantImage) {
             this.image = variantImage;
+        },
+    },
+
+    computed: {
+        title() {
+            return this.brand + '' + this.product
+        },
+        isActive(){
+            return this.inventory > 0;
+        },
+        inStock() {
+            return this.inventory > 0;
         }
     }
 })

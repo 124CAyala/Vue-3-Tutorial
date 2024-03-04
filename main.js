@@ -1,41 +1,9 @@
 const app = Vue.createApp({
     data() {
         return {
-            cart: 1,
-            product: 'Socks',
-            brand: 'Vue Mastery',
-            description: 'They are socks',
-            selectedVariant: 0,
-            url: 'https://www.vuemastery.com/',
-            inventory: 10,
-            onSale: true,
-            details: ['50% Cotton', '30% Wool', '20% Polyester'],
-            variants: [
-                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
-                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 },
-            ],
-            sizes: ['xsmall', 'small', 'medium', 'large', 'xlarge']
+            cart: 0,
         }
     },
-    methods: {
-        addToCart(){
-            this.cart += 1;
-        },
-        updateVariant(index){
-            this.selectedVariant = index;
-        },
-    },
-
-    computed: {
-        title() {
-            return this.brand + '' + this.product
-        },
-        image(){
-            return this.variants[this.selectedVariant].image;
-        },
-        inStock() {
-            return this.variants[this.selectedVariant].quantity;
-        }
-    }
+    methods: {}
 })
 

@@ -62,7 +62,10 @@ data() {
 },
 methods: {
     addToCart(){
-        this.cart += 1;
+        this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
+    },
+    removeFromCart(){
+        this.$emit("remove-from-cart");
     },
     updateVariant(index){
         this.selectedVariant = index;
